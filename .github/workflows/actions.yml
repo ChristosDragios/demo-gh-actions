@@ -21,4 +21,6 @@ jobs:
   # We choose option 2 here, to be less restrive. For prod env it's reccomended to use option 3.
       - name: step-2 Greeting Time
         run: echo "${{ steps.greet.outputs.time }}"
-  #
+  # As per documentation of this public GH repo, we can use the time as outputs from this action.
+  # "greet" represents the added "id" attribute of step-1 to then reference it as variable in step-2.
+
