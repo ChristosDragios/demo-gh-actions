@@ -23,4 +23,17 @@ jobs:
         run: echo "${{ steps.greet.outputs.time }}"
   # As per documentation of this public GH repo, we can use the time as outputs from this action.
   # "greet" represents the added "id" attribute of step-1 to then reference it as variable in step-2.
+      - name: step-3 List Files
+        run: |
+          pwd
+          ls -a
+  # By default GH will NOT clone your repo in the VM working Directory. 
+  # To clone it, we used an official GH action in step-3.
+      - name: step-4 Checkout Action
+        uses: actions/checkout@v1
+      - name: step-5 List Files after Checkout
+        run: |
+          pwd
+          ls -a
+
 
