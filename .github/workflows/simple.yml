@@ -4,6 +4,7 @@ on: [push]
 
 jobs: 
   Run-Shell-Command-job-1:
+# Job 1 has 3 consequetive steps. Job 1 also has a dependancy on job 2 using the attribute "needs:". 
     runs-on: ubuntu-latest
     needs: ["Run-Windows-Command-job-2"]
     steps:
@@ -20,6 +21,7 @@ jobs:
         shell: python
   
   Run-Windows-Command-job-2:
+  # Job 2 is running on Windoows and has 2 consequetive steps. It is printing the current directory in both Bash and PowerShell.
     runs-on: windows-latest
     steps:
       - name: step-1 Directory PowerShell
