@@ -18,3 +18,5 @@ jobs:
   # 2) The version
   # 3) A specific commit made in this repo 
   # We choose option 2 here, to be less restrive. For prod env it's reccomended to use option 3.
+      - name: step-2 Greeting Time
+        run: echo "${{steps.step-1 Simple JS Action.ouputs.time}}"
