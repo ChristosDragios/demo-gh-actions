@@ -8,12 +8,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
   # Instead of "run: attribute, we use "uses:" to indicate that we are running a GH Action with JS."
-      - name: Simple JS Action
+      - name: step-1 Simple JS Action
         uses: actions/hello-world-javascript-action@v1
+        with:
+          who-to-greet: Christos
   # This action is published on an official JS repo and so we have to simply reference it.
   # When referencing a public GH repo as Action, we should use the format 'username/repo@'and then one of the following: 
   # 1) A branch (master or some other)
   # 2) The version
   # 3) A specific commit made in this repo 
   # We choose option 2 here, to be less restrive. For prod env it's reccomended to use option 3.
-  
